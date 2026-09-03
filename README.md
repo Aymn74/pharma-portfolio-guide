@@ -148,7 +148,7 @@ L
 | 6 | محاكي أثر النقص والتعاميم | سعودي | سلامة / إمداد | L | ◐ |
 | 7 | مختبر مطابقة مطالبات التأمين الإلكترونية | سعودي | تأمين / معلوماتية | L | ✗ |
 | 8 | بطاقة جودة بيانات الحد الأدنى للتأمين | سعودي | تأمين / جودة بيانات | M | ◐ |
-| 9 | مقارن سوق الدواء السعودي–الإماراتي | خليجي | وصول سوق | L | ◐ |
+| 9 | مختبر جاهزية ملف اقتصاديات الدواء للهيئة | سعودي | وصول سوق / اقتصاد صحي / تنظيمي | L | ◐ |
 | 10 | خريطة التجارب السريرية في الخليج والإقليم | إقليمي | أبحاث سريرية | M | ✓ |
 | 11 | مؤشرات المضادات الحيوية الإقليمية | إقليمي | صحة عامة | M | ◐ |
 | 12 | مستكشف موافقات الأدوية الأمريكية | عالمي | تنظيمي | M | ✓ |
@@ -586,31 +586,178 @@ At least 20 documented rules, each linked to a source clause; no PHI; missing �
 
 ---
 
-### 9 — Saudi–UAE Medicine Market Comparator
+### 9 — SFDA Pharmacoeconomic Submission Readiness Lab
 
-**الفكرة ببساطة:** السعودية والإمارات تنشران قوائم الأدوية المسجلة مع أسعارها المعلنة. هذا المشروع يقارن المنتجات بين البلدين على مستوى المادة والقوة والشكل والعبوة والسعر المنشور، بمطابقة يراجعها إنسان. مناسب لوصول السوق. لا يدّعي التكافؤ ولا أن فرق السعر «وفر».
+**الفكرة ببساطة:** يحوّل المشروع دليل الهيئة العامة للغذاء والدواء لتقييم دراسات اقتصاديات الدواء إلى مختبر رقمي لفحص جاهزية ملف اقتصادي تجريبي. يحدد المتطلبات المناسبة حسب نوع المنتج والدراسة، ويكشف العناصر المكتملة والناقصة وما يحتاج إلى تبرير أو مراجعة بشرية. مناسب لمسارات **Market Access وHEOR والشؤون التنظيمية**، لكنه لا يقدّم طلبًا حقيقيًا ولا يضمن قبول الهيئة.
 
 ```text
-PROJECT 9 — Saudi–UAE Medicine Market Comparator
+PROJECT 9 — SFDA Pharmacoeconomic Submission Readiness Lab
 Duration class: L. Publish: GitHub + Vercel.
 
 GOAL
-Build an exploratory comparison of publicly registered products in Saudi Arabia and the UAE at the level of ingredient, strength, form, pack, and published price, with reviewed matching and no equivalence claims.
+Build a bilingual, evidence-traceable readiness laboratory that converts the SFDA Economic Evaluation Studies Guidelines into structured validation rules.
+
+The application must assess a synthetic or demonstration pharmacoeconomic dossier and classify each requirement as:
+- Complete
+- Missing
+- Not applicable
+- Needs justification
+- Human review required
+
+This is an educational completeness and readiness tool. It must never predict, guarantee, or represent SFDA acceptance.
 
 VERIFIED SOURCES
-- Saudi Human Drug List via CHI/SFDA: https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx
-- UAE EDE Drug Directory: https://services.ede.gov.ae/drugdirectory?lang=en-US (tested: public CSV export of 17,107 records, 16 fields, no registration; session anti-forgery token required, do not assume a stable internal endpoint).
-- Optional third country, verified: Health Canada Drug Product Database API https://health-products.canada.ca/api/documentation/dpd-documentation-en.html (JSON, no key; filter class_name=Human; no prices). Add only after the two-country comparison is complete; never mix the price comparison with a three-country registration comparison.
+- Official SFDA guideline page: https://www.sfda.gov.sa/en/guide/19004
+- Official PDF: https://www.sfda.gov.sa/sites/default/files/2025-10/EconomicEvaluationStudies_1.pdf
+- CHEERS 2022: https://www.equator-network.org/reporting-guidelines/cheers/
 
-METHOD AND LIMITS
-- Separate currency, pack size, unit price, and list price; never convert prices without an explicit exchange-rate date; never present a price difference as an available saving.
-- Explainable entity resolution with ambiguous/unmatched states. Never infer market availability from registration alone.
+The SFDA PDF was directly tested on 3 September 2026:
+- HTTP status: 200
+- Content-Type: application/pdf
+- File size: 592,465 bytes
+- Pages: 19
+- Version: 1.1
+- SHA-256: 86163CA5F4F24830B8D833C10F7F05D59431939C08CB10E57B2C8C831C5210DA
+
+The guideline contains:
+- General submission requirements
+- Economic study requirements by product type
+- Full economic evaluation requirements
+- Budget impact analysis requirements
+- Potential exemption criteria
+- General Requirements Form A
+- Pharmacoeconomics Submission Form B
+- Budget Impact Analysis Submission Form C
+- The stated location of the summary within eCTD section 1.8.2
+
+SCOPE
+Support the following product categories:
+- New chemical product
+- Biological product
+- Generic chemical product
+- Biosimilar
+
+Support the following study types:
+- Budget Impact Analysis — BIA
+- Cost-Minimization Analysis — CMA
+- Cost-Effectiveness Analysis — CEA
+- Cost-Utility Analysis — CUA
+
+The tool must distinguish between:
+1. General requirements
+2. Full economic evaluation requirements
+3. Partial economic evaluation and BIA requirements
+4. Submission Forms A, B, and C
+5. CHEERS reporting items
+6. Potential exemption conditions
+
+METHOD
+Manually review the official guideline and encode each requirement in a version-controlled YAML or JSON rule registry.
+
+Each rule should contain at least:
+- rule_id
+- guideline_version
+- source_page
+- source_section
+- product_type
+- study_type
+- requirement_category
+- required_or_conditional
+- evidence_expected
+- validation_method
+- failure_message_ar
+- failure_message_en
+- review_note
+- last_verified_date
+
+Do not merge SFDA requirements with CHEERS requirements. Display them as separate layers:
+- SFDA submission readiness
+- CHEERS reporting completeness
+
+Do not automatically determine exemption eligibility. The guideline contains interactions between the study-requirement table and the exemption criteria that may require regulatory interpretation. Such cases must be classified as:
+
+“Potential exemption — regulatory review required.”
+
+Do not hard-code the stated cost-effectiveness threshold, discount rate, time horizon, or other numerical guidance as timeless policy. Every numerical rule must remain linked to the guideline version, source page, and verification date.
 
 DELIVERABLES
-Adapters; canonical product model; match-review UI; country coverage cards; price-normalization scenarios; manufacturer/origin/status analysis; data-freshness banner.
+1. A versioned SFDA requirements registry.
+2. A bilingual product-and-study selection wizard.
+3. A synthetic dossier manifest uploader.
+4. A readiness dashboard.
+5. A rule-level traceability viewer.
+6. A Forms A/B/C completeness viewer.
+7. A separate CHEERS 2022 completeness assessment.
+8. A gap report generator.
+9. A downloadable CSV/JSON audit trail.
+10. A synthetic example dossier containing no confidential company information.
+11. A source-doctor command that verifies the guideline URL, file type, size, checksum, version, and required sections.
+12. A methodology page explaining what the tool can and cannot conclude.
+
+The dashboard must show:
+- Overall completeness by requirement category
+- Missing mandatory evidence
+- Conditional requirements awaiting a decision
+- Items requiring justification
+- Items requiring regulatory review
+- SFDA requirements and CHEERS items separately
+- The exact source page for every result
+
+SYNTHETIC DOSSIER
+Create demonstration fixtures for:
+- One new chemical product with a CEA/CUA and BIA
+- One biological product with incomplete sensitivity analysis
+- One generic product with a CMA/BIA scenario
+- One biosimilar claiming a potential exemption that requires human review
+
+The fixtures may include synthetic epidemiological estimates, market-share projections, marketing plans, target populations, comparators, perspectives, time horizons, costs, outcomes, discounting, DSA, PSA, scenario analyses, generalizability assessments, conflicts of interest, funding, and international HTA recommendations.
+
+Every synthetic value must be visibly labeled as synthetic in the data, interface, and exported report.
+
+METHOD AND SAFETY LIMITS
+- Do not upload or process confidential company dossiers.
+- Do not provide regulatory, legal, pricing, or reimbursement advice.
+- Do not predict the probability of SFDA approval.
+- Do not label a dossier “SFDA compliant.”
+- Use “readiness” or “completeness against the encoded guideline version.”
+- Do not infer that a completed checklist proves methodological quality.
+- Do not treat CHEERS as an SFDA requirement unless the SFDA guideline explicitly references it.
+- Do not convert “not applicable” into “missing.”
+- Do not resolve ambiguous exemption cases automatically.
+- Do not silently update rules when the official guideline changes.
 
 ACCEPTANCE TESTS
-Double-reviewed gold set; no fuzzy auto-accept; pack and unit prices shown separately; exchange-rate effect adjustable; warning that market authorization ≠ availability ≠ reimbursement; full file not republished without checking the authority's terms.
+- Decision tests for every supported product and study type.
+- One complete synthetic fixture and at least three incomplete fixtures.
+- Tests distinguishing missing, conditional, not applicable, and needs justification.
+- Every encoded rule has a guideline version, page, section, and verification date.
+- Manual visual verification of Forms A, B, and C against the official PDF.
+- A version and checksum test for the source PDF.
+- A schema-drift test for the rule registry.
+- A test proving that CHEERS and SFDA scores cannot be merged.
+- A test proving that potential exemptions always require human review.
+- No confidential documents, real company prices, or personal data in the repository.
+- Mobile, RTL, accessibility, build, unit, integration, and E2E tests must pass.
+- The interface must display this warning prominently:
+
+“Educational readiness and completeness tool. It is not regulatory advice, an official SFDA submission system, or a guarantee of acceptance.”
+
+PORTFOLIO EVIDENCE
+Document:
+- How the official PDF was verified
+- How each requirement was converted into a rule
+- One ambiguous regulatory condition that was intentionally not automated
+- One discrepancy detected between a synthetic dossier and the guideline
+- One failed test and how it was corrected
+- The limitations of checklist-based assessment
+- The difference between submission completeness and methodological validity
+
+CV OUTPUT
+Generate CV bullets only from measured implementation results, for example:
+
+“Built a bilingual SFDA pharmacoeconomic submission-readiness laboratory encoding X versioned requirements across Forms A/B/C, with page-level traceability, synthetic dossier testing, and separate CHEERS reporting assessment.”
+
+Replace X only after counting the implemented and tested rules.
 ```
 
 ---
