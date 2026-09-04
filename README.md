@@ -336,6 +336,108 @@ GitHub Portfolio
 
 **ملاحظة:** تختلف طريقة ربط GitHub قليلًا من أداة إلى أخرى، لكن المبدأ واحد: تسجيل الدخول إلى GitHub، منح الأداة الصلاحية المناسبة، ثم السماح لها بإنشاء أو تحديث مستودع المشروع.
 
+## 12. نشر المشروع على Vercel بسهولة
+
+إذا كان مشروعك يحتوي على واجهة ويب أو تطبيق يمكن تشغيله عبر المتصفح، يمكنك نشره على Vercel للحصول على رابط مباشر يفتحه أي شخص.
+
+### 1. أنشئ حساب Vercel
+
+أنشئ حسابًا في Vercel، ويفضّل تسجيل الدخول باستخدام حساب GitHub نفسه. بعدها اربط Vercel بحساب GitHub وامنحه صلاحية الوصول إلى المستودعات التي تريد نشرها. الفكرة ببساطة:
+
+```text
+GitHub
+   ↓
+Vercel
+   ↓
+رابط مباشر للتطبيق
+```
+
+### 2. ارفع المشروع إلى GitHub
+
+بعد أن يصبح المشروع موجودًا في مستودع GitHub، يمكنك استيراده مباشرة إلى Vercel. الخطوات عادة:
+
+```text
+Add New Project
+↓
+Import Git Repository
+↓
+اختر المشروع
+↓
+Deploy
+```
+
+وفي كثير من المشاريع يستطيع Vercel اكتشاف إعدادات التشغيل تلقائيًا.
+
+### 3. استخدم وكيل البرمجة للمساعدة
+
+إذا كنت تستخدم Codex أو Claude Code أو وكيلًا برمجيًا مشابهًا، يمكنك أن تطلب منه:
+
+```text
+Prepare this project for deployment on Vercel.
+Check the build configuration,
+fix any deployment issues,
+make sure secrets are handled correctly,
+and deploy the application.
+```
+
+أو ببساطة:
+
+```text
+Deploy this project to Vercel
+and give me the public URL.
+```
+
+إذا كانت الأداة مرتبطة بحساب Vercel أو تملك صلاحية النشر، فيمكنها تنفيذ معظم الخطوات نيابة عنك.
+
+### 4. أضف المتغيرات السرية داخل Vercel
+
+إذا كان المشروع يستخدم:
+
+- API Keys
+- Database URLs
+- Supabase Keys
+- OpenAI Keys
+
+فلا تضعها داخل الكود، بل أضفها داخل إعدادات المشروع في Vercel ضمن:
+
+```text
+Environment Variables
+```
+
+### 5. احصل على رابط المشروع
+
+بعد نجاح النشر سيمنحك Vercel رابطًا مثل:
+
+```text
+https://your-project.vercel.app
+```
+
+يمكنك وضع هذا الرابط بجانب رابط GitHub في محفظتك:
+
+```text
+GitHub Repository
+      +
+Live Demo
+```
+
+فتصبح رحلة المشروع:
+
+```text
+اختر فكرة
+   ↓
+نفذ المشروع مع الوكيل
+   ↓
+ارفعه إلى GitHub
+   ↓
+اربط GitHub بـ Vercel
+   ↓
+Deploy
+   ↓
+رابط مباشر للتطبيق
+```
+
+وبذلك يصبح لديك GitHub لعرض الكود والمشروع، وVercel لعرض التطبيق بشكل حي يمكن تجربته مباشرة.
+
 ---
 
 # الجزء الثاني: العقد العام وبرومبتات المشاريع (بالإنجليزية)
