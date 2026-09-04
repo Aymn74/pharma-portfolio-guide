@@ -1,30 +1,41 @@
-# المحفظة الصيدلانية العملية: 40 مشروعًا لبناء مسار مهني ودعم السيرة الذاتية
+# المحفظة الصيدلانية العملية
 
-> دليل لبناء مشاريع صيدلانية قابلة للنشر باستخدام البيانات المفتوحة ووكلاء الذكاء الاصطناعي
+> 40 مشروعًا صيدلانيًا باستخدام البيانات المفتوحة ووكلاء الذكاء الاصطناعي، من الفكرة إلى GitHub وVercel.
 
-دليل لحديثي التخرج في الصيدلة، وللصيادلة الذين يريدون إثبات كفاءتهم عند التقدم لوظيفة أو داخل جهة عملهم، ولتقوية مهارات العمل باستخدام وكلاء الذكاء الاصطناعي.
+دليل عربي عملي لحديثي التخرج في الصيدلة، وللصيادلة الراغبين في تعزيز سيرتهم الذاتية وإثبات قدرتهم على تحويل مشكلة مهنية إلى مشروع قابل للفحص والتجربة والنشر.
 
-لا يفترض الدليل معرفة مسبقة بالبرمجة. كل ما يحتاجه المتدرب والراغب في التجربة هو فهم مشكلة مهنية أو مهمة في مجال معين، وقيادة وكيل ذكاء اصطناعي للمساعدة في تبني الحل وأداء المهمة، والقدرة على شرح النتائج.
+لا يتطلب البدء معرفة مسبقة بالبرمجة. يحتاج القارئ إلى فهم السؤال المهني، وقيادة وكيل برمجة لبناء الحل واختباره، ثم مراجعة النتائج والقدرة على شرحها بوضوح.
 
-الجزء الأول من الدليل بالعربية ويشرح الفكرة والمصطلحات وطريقة العمل. الجزء الثاني يحوي «العقد العام» وأربعين برومبت مشروع بالإنجليزية، تُعطى مباشرة إلى أداة الذكاء الاصطناعي. في كل مشروع: شرح عربي مبسط قبل نص «البرومبت» الإنجليزي.
+يشرح الجزء الأول طريقة اختيار المشروع وتنفيذه ونشره وعرضه مهنيًا. ويضم الجزء الثاني عقدًا عامًا وأربعين برومبتًا بالإنجليزية يمكن استخدامها مع Codex أو Claude Code أو Gemini CLI وأدوات مشابهة. يسبق كل برومبت شرح عربي مبسط للمشروع.
 
-تاريخ التحقق من المصادر: 3 سبتمبر 2026. كل مصدر بيانات مذكور في هذا الدليل جُرّب فعليًا في ذلك التاريخ: فُتح الرابط، ونُزّل الملف أو استُدعيت الواجهة، وفُحصت الحقول. لا يوجد مشروع مبني على افتراض أن البيانات «موجودة على الأرجح».
+**الإصدار:** 1.0<br>
+**آخر تحديث للمحتوى:** 4 سبتمبر 2026<br>
+**آخر تحقق من المصادر:** 3 سبتمبر 2026
+
+[ابدأ من هنا](#5-كيف-تستخدم-هذا-الدليل-خطوة-بخطوة) ·
+[جدول المشاريع](#6-جدول-المشاريع-الأربعين) ·
+[اختر مسارك](#7-كيف-تختار) ·
+[النشر على GitHub](#11-من-الفكرة-إلى-github-في-خطوات-بسيطة) ·
+[النشر على Vercel](#12-نشر-المشروع-على-vercel-بسهولة) ·
+[برومبتات المشاريع](#project-prompts)
+
+كل مصدر بيانات مذكور في هذا الدليل جُرّب فعليًا في تاريخ التحقق: فُتح الرابط، ونُزّل الملف أو استُدعيت الواجهة، وفُحصت الحقول. لا يوجد مشروع مبني على افتراض أن البيانات «موجودة على الأرجح».
 
 **ملاحظة:** كل «البرومبتات» في هذا الدليل أمثلة وسيناريوهات افتراضية، وليست وصفات نهائية. عدّلها وحسّنها بحسب النتائج التي تحصل عليها، وبحسب حاجتك وتخصصك.
 
 ---
 
-# الجزء الأول: الفكرة بلغة بسيطة
+## الجزء الأول: الفكرة بلغة بسيطة
 
-## 1. لماذا المشروع، لدعم السيرة المهنية؟
+## 1. لماذا تبني مشروعًا لدعم سيرتك المهنية؟
 
-بنية الأعمال تتغير سريعًا مع دخول الذكاء الاصطناعي، ويتغير معها ما يُقنع الجهات الراغبة بالتوظيف.
+تتغير بيئة العمل سريعًا مع دخول الذكاء الاصطناعي، ويتغير معها ما يُقنع جهات التوظيف بقدرة المتقدم على الإنجاز.
 
-وُضع هذا الدليل لمساعدة الراغبين في تدعيم السيرة المهنية ببعض المشاريع، وليكون نقطة بداية لمن يريد تحسين قدرته على التعامل مع وكلاء الذكاء الاصطناعي لإنجاز المهام.
+يساعدك هذا الدليل على تعزيز سيرتك الذاتية بمشاريع عملية، وعلى تحسين قدرتك على قيادة وكلاء الذكاء الاصطناعي لإنجاز مهام مهنية قابلة للفحص والشرح.
 
-## 2. ما الذي يتم بناؤه بشكل محدد؟
+## 2. ماذا ستبني تحديدًا؟
 
-كل مشروع في هذا الدليل هو بناء أداة تعمل على بيانات عامة رسمية (قوائم الأدوية المسجلة، بلاغات الأعراض الجانبية، سجلات التجارب السريرية)، تجيب عن سؤال مهني واحد محدد، وتعرض الإجابة بوضوح.
+يقود كل مشروع في هذا الدليل إلى بناء أداة تعمل على بيانات عامة رسمية، مثل قوائم الأدوية المسجلة وبلاغات الأعراض الجانبية وسجلات التجارب السريرية. تجيب الأداة عن سؤال مهني واحد محدد، وتعرض الإجابة بوضوح.
 
 مثال: بدل عبارة عامة في سيرتك عن «التعامل مع نقص الأدوية»، تشير إلى أداة تثبت ذلك: تجمع قوائم النقص المنشورة رسميًا في أمريكا وأوروبا والسعودية، وتُظهر أي المواد الفعالة تتكرر في أكثر من قائمة، وتحدّث نفسها أسبوعيًا.
 
@@ -98,22 +109,15 @@
 
 ## 5. كيف تستخدم هذا الدليل خطوة بخطوة؟
 
-1. اختر مشروعًا من الجدول في القسم 6. إن كنت لا تكتب كودًا، ابدأ بمشروع موسوم ✓ ومن الفئة الزمنية
-S.
+1. اختر مشروعًا من الجدول في القسم 6. إن كنت لا تكتب كودًا، ابدأ بمشروع موسوم ✓ ومن الفئة الزمنية S.
 2. اقرأ الشرح العربي للمشروع وتأكد أنك تفهم السؤال الذي يجيب عنه، وما الذي لا يدّعيه.
 3. افتح رابط المصدر بنفسك مرة واحدة وتأكد أنه يعمل اليوم. إن لم يعمل، لا تبدأ.
 4. أنشئ مجلدًا فارغًا على جهازك، وشغّل الوكيل داخله.
-5. انسخ «العقد العام» كاملًا، ثم انسخ تحته برومبت المشروع، وأعطهما للوكيل كرسالة واحدة. إن كنت غير مبرمج، أضف في أول سطر:
-Project owner is not a programmer.
-6. أول ما يجب أن يسلّمه الوكيل: تقرير فحص المصدر
-(source audit)
-وعينة بيانات صغيرة واختبار واحد. لا تسمح له ببناء الواجهة قبل ذلك.
+5. انسخ «العقد العام» كاملًا، ثم انسخ تحته برومبت المشروع، وأعطهما للوكيل كرسالة واحدة. إن كنت غير مبرمج، أضف في أول سطر: `Project owner is not a programmer.`
+6. أول ما يجب أن يسلّمه الوكيل: تقرير فحص المصدر (`source audit`) وعينة بيانات صغيرة واختبار واحد. لا تسمح له ببناء الواجهة قبل ذلك.
 7. راجع النتائج على مراحل: هل الأرقام منطقية؟ افتح خمس حالات يدويًا وقارنها بالمصدر.
 8. اطلب من الوكيل أن يمتحنك بعشرة أسئلة عن المشروع، وأجب بنفسك. إن لم تستطع، فالمشروع ليس جاهزًا للعرض بعد.
-9. انشر المستودع على
-GitHub
-وإن كان له واجهة فانشرها على
-Vercel.
+9. انشر المستودع على GitHub. إن كان له تطبيق تفاعلي فانشره على Vercel، وإن كان تقريرًا ثابتًا فيمكنك استخدام GitHub Pages.
 10. اكتب في سيرتك سطرًا واحدًا عن المشروع بأرقام حقيقية من التشغيل (انظر القسم 9).
 
 ## 6. جدول المشاريع الأربعين
@@ -130,8 +134,8 @@ L
 
 | # | المشروع | النطاق | المجال | المدة | غير مبرمج |
 |---:|---|---|---|---|---|
-| 1 | مستكشف جودة سجل الأدوية السعودي | سعودي | تنظيمي / بيانات | M | ✓ |
-| 2 | مستكشف تطبيق دليل ضمان للأدوية | سعودي | تأمين / ترميز / معلوماتية | L | ◐ |
+| 1 | مستكشف جودة بيانات قائمة الأدوية البشرية السعودية | سعودي | تنظيمي / بيانات | M | ✓ |
+| 2 | مستكشف تنفيذ دليل ضمان للأدوية | سعودي | تأمين / ترميز / معلوماتية | L | ◐ |
 | 3 | مطابقة سجلات الأدوية السعودية الموحدة | سعودي | تكامل / إمداد | L | ◐ |
 | 4 | مراقب تغيرات كتالوج الشراء الموحد | سعودي | سلسلة إمداد | M | ✓ |
 | 5 | رادار المنافسات العامة للشراء الموحد | سعودي | مشتريات | L | ✗ |
@@ -171,6 +175,53 @@ L
 | 39 | التأهيل المسبق الدولي مقابل السجل السعودي | سعودي / عالمي | صحة عالمية | S | ✓ |
 | 40 | مستكشف بنية السوق الدوائي السعودي | سعودي | وصول سوق | M | ◐ |
 
+### روابط المصادر الأساسية
+
+تبقى الروابط كاملة داخل البرومبتات حتى تُنسخ مع تعليمات المشروع. ويوفر الجدول الآتي رابطًا مباشرًا قابلًا للنقر إلى نقطة البداية الرسمية لكل مشروع:
+
+| المشروع | المصدر الأساسي |
+|---:|---|
+| 1 | [CHI–Daman Drug Formulary](https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx) |
+| 2 | [CHI–Daman Drug Formulary](https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx) |
+| 3 | [NUPCO Unified Catalogue](https://www.nupco.com/suppliers/unified-catalogue/) |
+| 4 | [NUPCO Unified Catalogue](https://www.nupco.com/suppliers/unified-catalogue/) |
+| 5 | [NUPCO Tenders](https://www.nupco.com/tenders/tenders-list/) |
+| 6 | [SFDA Anticipated Shortage](https://www.sfda.gov.sa/en/anticipatedShortage) |
+| 7 | [NPHIES Implementation Guide](https://portal.nphies.sa/ig/) |
+| 8 | [CHI Laws and Regulations](https://www.chi.gov.sa/en/knowledge-center/Pages/laws-regulations.aspx) |
+| 9 | [SFDA Pharmacoeconomic Guidelines](https://www.sfda.gov.sa/en/guide/19004) |
+| 10 | [ClinicalTrials.gov API](https://clinicaltrials.gov/data-about-studies/learn-about-api) |
+| 11 | [WHO Global Health Observatory API](https://ghoapi.azureedge.net/api/) |
+| 12 | [Drugs@FDA Data Files](https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files) |
+| 13 | [Orange Book Data Files](https://www.fda.gov/drugs/drug-approvals-and-databases/orange-book-data-files) |
+| 14 | [Purple Book Downloads](https://purplebooksearch.fda.gov/index.cfm?event=downloads) |
+| 15 | [DailyMed Web Services](https://dailymed.nlm.nih.gov/dailymed/app-support-web-services.cfm) |
+| 16 | [openFDA Drug Event API](https://open.fda.gov/apis/drug/event/) |
+| 17 | [EMA Website Data](https://www.ema.europa.eu/en/about-us/about-website/download-website-data-json-data-format) |
+| 18 | [FDA Warning Letters](https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/compliance-actions-and-activities/warning-letters) |
+| 19 | [ClinicalTrials.gov API](https://clinicaltrials.gov/data-about-studies/learn-about-api) |
+| 20 | [ClinicalTrials.gov API](https://clinicaltrials.gov/data-about-studies/learn-about-api) |
+| 21 | [Europe PMC API](https://europepmc.org/developers) |
+| 22 | [Pharmaverse](https://github.com/pharmaverse) |
+| 23 | [Synthea](https://github.com/synthetichealth/synthea) |
+| 24 | [SNOMED CT Mapping Guide](https://docs.snomed.org/snomed-ct-practical-guides/snomed-ct-mapping-guide) |
+| 25 | [OHDSI ETL-Synthea](https://github.com/OHDSI/ETL-Synthea) |
+| 26 | [CMS Part D Prescribers Data](https://data.cms.gov/provider-summary-by-type-of-service/medicare-part-d-prescribers/medicare-part-d-prescribers-by-provider-and-drug) |
+| 27 | [CMS Marketplace Public Use Files](https://www.cms.gov/marketplace/resources/data/public-use-files) |
+| 28 | [Medicaid NADAC Data](https://data.medicaid.gov/dataset/fbb83258-11c7-47f5-8b18-5f8e79f7e704) |
+| 29 | [NICE Economic Evaluation](https://www.nice.org.uk/process/pmg36/chapter/economic-evaluation-2) |
+| 30 | [CHI–Daman Drug Formulary](https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx) |
+| 31 | [SFDA Variation Guidelines](https://www.sfda.gov.sa/sites/default/files/2025-03/Variation.pdf) |
+| 32 | [WHO AWaRe](https://aware.essentialmeds.org/list) |
+| 33 | [openFDA Drug Shortages API](https://api.fda.gov/drug/shortages.json) |
+| 34 | [openFDA Complete Response Letters API](https://api.fda.gov/transparency/crl.json) |
+| 35 | [openFDA Drug Enforcement API](https://api.fda.gov/drug/enforcement.json) |
+| 36 | [CPIC API](https://api.cpicpgx.org/v1/) |
+| 37 | [RxNav RxNorm API](https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html) |
+| 38 | [FDA AI-Enabled Medical Devices](https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-enabled-medical-devices) |
+| 39 | [WHO Prequalified Finished Pharmaceutical Products](https://extranet.who.int/prequal/medicines/prequalified/finished-pharmaceutical-products) |
+| 40 | [CHI–Daman Drug Formulary](https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx) |
+
 ## 7. كيف تختار؟
 
 لبناء أفضل محفظة يُنصح بثلاثة مشاريع: مشروع أساسي عميق في المسار الذي تستهدفه، ومشروع مجاور يثبت اتساع الفهم، ومشروع ثالث داعم.
@@ -191,9 +242,7 @@ L
 | أجهزة طبية وصحة رقمية | 38 + 7 + 37 |
 | صحة عالمية ومنظمات دولية | 39 + 11 + 10 |
 
-قاعدة الاختيار: قيّم نفسك من 1 إلى 5 في معرفة المجال والإحصاء والبرمجة والوقت والقدرة على الشرح، ثم اختر مشروعًا أعلى بدرجة واحدة فقط. لا تبدأ بمشروع فئة
-L
-مباشرة قبل الاطلاع على المقام الإحصائي فيه.
+قاعدة الاختيار: قيّم نفسك من 1 إلى 5 في معرفة المجال والإحصاء والبرمجة والوقت والقدرة على الشرح، ثم اختر مشروعًا أعلى بدرجة واحدة فقط. لا تبدأ بمشروع من الفئة L قبل فهم البيانات والمنهج والمقاييس المطلوبة فيه.
 
 ## 8. القواعد التي لا يجوز كسرها
 
@@ -210,13 +259,34 @@ L
 9. **كل رقم في السيرة الذاتية من التشغيل الفعلي.** لا «حسّنت الكفاءة 40%» بلا قياس.
 10. **إذا فشل المصدر يتوقف العمل.** لا استبدال خفي بمصدر غير رسمي، ولا بيانات مخترعة.
 
-## 9. كيفية الاستشهاد به في السيرة الذاتية والعرض في مقابلة؟
+## 9. كيف تعرض المشروع في السيرة الذاتية والمقابلة؟
 
-صيغة السطر في السيرة: فعل + ما بُني + المصدر والحجم + الطريقة + نتيجة مقاسة. مثال بالإنجليزية لأن أغلب السير الذاتية في القطاع تُكتب بها:
+### في السيرة الذاتية
 
-Built a bilingual cross-border shortage overlap monitor over 1,635 FDA and 84 EMA shortage records plus the Saudi anticipated-shortage list, with source-audit checks, schema tests, and a weekly change feed.
+صيغة السطر: فعل + ما بُني + المصدر والحجم + الطريقة + نتيجة مقاسة. استخدم قالبًا مثل الآتي؛ لأن أغلب السير الذاتية في القطاع تُكتب بالإنجليزية:
 
-ملاحظة: لا تكتب هذا السطر قبل أن تظهر الأرقام الفعلية من تشغيل مشروعك الذي قمت باختياره.
+```text
+Built a bilingual cross-border shortage overlap monitor covering [X] FDA, [Y] EMA, and [Z] Saudi records, with source-audit checks, schema tests, and a dated change feed.
+```
+
+استبدل القيم بين الأقواس بأرقام ظهرت فعلًا عند تشغيل مشروعك. لا تستخدم الأرقام الموجودة في وصف المشروع أو في فحص المصدر على أنها نتائج لمشروع لم تنفذه.
+
+ضع اسم المشروع وروابطه قبل السطر أو بعده:
+
+```text
+Cross-Border Shortage Overlap Monitor
+GitHub: [repository URL] | Live demo: [deployment URL]
+```
+
+### في المقابلة
+
+اشرح المشروع خلال دقيقة واحدة بهذا الترتيب:
+
+1. المشكلة المهنية التي اخترتها.
+2. المصدر الرسمي الذي استخدمته.
+3. ما الذي بنيته وكيف اختبرته.
+4. نتيجة واحدة مقاسة من التشغيل.
+5. أهم قيد في الأداة وما لا يجوز استنتاجه منها.
 
 ## 10. قائمة الإنهاء قبل النشر
 
@@ -230,9 +300,7 @@ Built a bilingual cross-border shortage overlap monitor over 1,635 FDA and 84 EM
 - [ ] لا شعار جهة، وعبارة «مشروع مستقل» موجودة.
 - [ ] لا ترتيب أو درجة على مستوى الأفراد.
 - [ ] الاختبارات شُغّلت فعلًا ونتائجها مسجلة بتاريخها.
-- [ ] شخص جديد يستطيع تشغيل المشروع من ملف
-README
-وحده.
+- [ ] شخص جديد يستطيع تشغيل المشروع من ملف README وحده.
 - [ ] رابط تجربة عام أو فيديو قصير يعمل.
 - [ ] قيد واحد على الأقل مكتوب بصدق.
 - [ ] تستطيع شرح المشروع وتعديل جزء منه دون إعادة توليده.
@@ -241,9 +309,9 @@ README
 
 بعد اختيار أحد المشاريع من هذا الدليل وتنفيذه، يمكنك نشره على GitHub بسهولة حتى يصبح جزءًا من محفظتك المهنية.
 
-### 1. أنشئ حساب GitHub
+### 1. أنشئ حسابًا على GitHub
 
-اذهب إلى GitHub وأنشئ حسابًا مجانيًا. بعد ذلك سيكون لديك رابط شخصي مشابه لـ:
+اذهب إلى [GitHub](https://github.com/) وأنشئ حسابًا مجانيًا. بعد ذلك سيكون لديك رابط شخصي مشابه لـ:
 
 ```text
 github.com/your-name
@@ -257,10 +325,10 @@ github.com/your-name
 
 - Codex
 - Claude Code
-- Gemini
-- أو أي Coding Agent يدعم GitHub
+- Gemini CLI
+- أو أي وكيل برمجة يدعم GitHub
 
-سجّل الدخول إلى GitHub من داخل الأداة، ثم وافق على منحها الصلاحيات المطلوبة للوصول إلى مشاريعك. في معظم الحالات ستظهر لك نافذة مثل:
+إذا كانت الأداة تدعم تكامل GitHub الرسمي، فاربط الحساب من خلاله وامنحها الوصول إلى المستودع المطلوب فقط. راجع الملفات والتغييرات المقترحة قبل السماح بإنشاء المستودع أو رفع التحديثات. وقد تظهر لك نافذة مثل:
 
 ```text
 Connect GitHub
@@ -270,7 +338,7 @@ Sign in to GitHub
 Authorize
 ```
 
-بعدها يستطيع الوكيل مساعدتك في إنشاء المستودع ورفع المشروع وتحديثه.
+بعدها يستطيع الوكيل مساعدتك في إنشاء المستودع ورفع المشروع وتحديثه بحسب الصلاحيات التي منحتها له.
 
 ### 3. اطلب من الوكيل تجهيز المشروع
 
@@ -292,17 +360,17 @@ and prepare it as a professional portfolio project.
 
 ### 4. راجع المشروع قبل النشر
 
-قبل الموافقة على الرفع، تأكد خصوصًا من عدم وجود:
+قبل الموافقة على الرفع، راجع التغييرات وتأكد خصوصًا من عدم وجود:
 
 ```text
 API Keys
 Passwords
-.env files
+.env files containing real values
 Private data
 Patient data
 ```
 
-ثم اسمح للوكيل بإكمال عملية النشر.
+لا ترفع ملف `.env` الحقيقي. ويمكنك نشر ملف `.env.example` إذا كان يحتوي أسماء المتغيرات فقط، من دون أي مفاتيح أو قيم سرية. بعد المراجعة اسمح للوكيل بإكمال عملية النشر.
 
 ### 5. احصل على رابط مشروعك
 
@@ -334,15 +402,17 @@ github.com/your-name/project-name
 GitHub Portfolio
 ```
 
-**ملاحظة:** تختلف طريقة ربط GitHub قليلًا من أداة إلى أخرى، لكن المبدأ واحد: تسجيل الدخول إلى GitHub، منح الأداة الصلاحية المناسبة، ثم السماح لها بإنشاء أو تحديث مستودع المشروع.
+**ملاحظة:** تختلف طريقة ربط GitHub من أداة إلى أخرى. استخدم التكامل الرسمي عند توفره، وامنح أقل قدر من الصلاحيات اللازمة، وراجع التغييرات قبل نشرها.
 
 ## 12. نشر المشروع على Vercel بسهولة
 
-إذا كان مشروعك يحتوي على واجهة ويب أو تطبيق يمكن تشغيله عبر المتصفح، يمكنك نشره على Vercel للحصول على رابط مباشر يفتحه أي شخص.
+إذا كان مشروعك يحتوي على واجهة ويب أو تطبيق يمكن تشغيله عبر المتصفح، يمكنك نشره على Vercel للحصول على رابط مباشر يفتحه أي شخص. استخدم GitHub Pages بدلًا منه عندما يكون الناتج تقرير Quarto أو صفحة HTML ثابتة، أما المكتبات وأدوات سطر الأوامر التي لا تحتاج واجهة عامة فيكفي نشرها على GitHub.
+
+في هذا الدليل، يُقترح Vercel لـ35 مشروعًا، وGitHub Pages لأربعة مشاريع، وGitHub وحده لمشروع واحد.
 
 ### 1. أنشئ حساب Vercel
 
-أنشئ حسابًا في Vercel، ويفضّل تسجيل الدخول باستخدام حساب GitHub نفسه. بعدها اربط Vercel بحساب GitHub وامنحه صلاحية الوصول إلى المستودعات التي تريد نشرها. الفكرة ببساطة:
+أنشئ حسابًا في [Vercel](https://vercel.com/) ويمكنك تسجيل الدخول باستخدام حساب GitHub نفسه. بعدها اربط Vercel بحساب GitHub، وامنحه صلاحية الوصول إلى المستودعات التي تريد نشرها فقط. الفكرة ببساطة:
 
 ```text
 GitHub
@@ -387,18 +457,18 @@ Deploy this project to Vercel
 and give me the public URL.
 ```
 
-إذا كانت الأداة مرتبطة بحساب Vercel أو تملك صلاحية النشر، فيمكنها تنفيذ معظم الخطوات نيابة عنك.
+إذا كانت الأداة مرتبطة بحساب Vercel وتملك صلاحية النشر، فيمكنها تنفيذ معظم الخطوات نيابة عنك. راجع إعدادات البناء والمتغيرات والوجهة قبل الموافقة على النشر.
 
 ### 4. أضف المتغيرات السرية داخل Vercel
 
-إذا كان المشروع يستخدم:
+إذا كان المشروع يستخدم قيمًا سرية، مثل:
 
 - API Keys
 - Database URLs
 - Supabase Keys
 - OpenAI Keys
 
-فلا تضعها داخل الكود، بل أضفها داخل إعدادات المشروع في Vercel ضمن:
+فلا تضعها داخل الكود أو README أو سجل Git، بل أضفها داخل إعدادات المشروع في Vercel ضمن:
 
 ```text
 Environment Variables
@@ -440,7 +510,7 @@ Deploy
 
 ---
 
-# الجزء الثاني: العقد العام وبرومبتات المشاريع (بالإنجليزية)
+## الجزء الثاني: العقد العام وبرومبتات المشاريع (بالإنجليزية)
 
 ## كيف تُركّب البرومبت الكامل؟
 
@@ -546,19 +616,21 @@ Now apply this contract to the project specification that follows.
 
 ---
 
-### 1 — Saudi Drug Registry Quality Explorer
+### 1 — Saudi Human Drug List Data-Quality Explorer
 
-**الفكرة ببساطة:** قائمة الأدوية البشرية المسجلة في السعودية ملف عام كبير. هذا المشروع يفحص جودة هذا الملف نفسه: أي الحقول ناقصة، أين التكرارات، وكيف تغيرت القائمة بين نسختين. مناسب لمن يستهدف الشؤون التنظيمية أو تحليل البيانات.
+**الفكرة ببساطة:** قائمة الأدوية البشرية السعودية ملف عام كبير منشور من خلال صفحة دليل ضمان للأدوية ومبني على بيانات التسجيل لدى الهيئة العامة للغذاء والدواء. يفحص هذا المشروع جودة بيانات الملف: الحقول غير المكتملة، والتكرارات المحتملة، والتغيرات بين نسختين، من دون وصف القائمة بأنها قاعدة التسجيل الحية لدى الهيئة. مناسب لمن يستهدف الشؤون التنظيمية أو تحليل البيانات.
+
+**المصدر الأساسي:** [CHI–Daman Drug Formulary](https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx)
 
 ```text
-PROJECT 1 — Saudi Drug Registry Quality Explorer
+PROJECT 1 — Saudi Human Drug List Data-Quality Explorer
 Duration class: M. Publish: GitHub + Vercel.
 
 GOAL
 Build a bilingual (Arabic/English) explorer of the data quality of the Saudi Human Drug List: completeness of registration, classification, form, route, and price fields; duplicates and contradictions; and what changed between two snapshots.
 
 VERIFIED SOURCES
-- CHI "Daman Drug Formulary" page publishing direct Excel files, including the Human Drug List built on SFDA data: https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx (tested: Excel downloaded; ICD-10, ATC, scientific name, form, route, strength, registration and price fields inspected).
+- CHI–Daman Drug Formulary page publishing direct Excel files, including the Human Drug List built on SFDA registration data: https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx (tested: Excel downloaded; ICD-10, ATC, scientific name, form, route, strength, registration and price fields inspected).
 - SFDA Open Data page as a secondary reference: https://www.sfda.gov.sa/en/open-data (firewall behavior: one request per run; manual download path required).
 Do not invent an SFDA API.
 
@@ -579,14 +651,16 @@ Detects schema drift; never turns null into zero; shows row counts before/after 
 
 ### 2 — CHI Formulary Implementation Navigator
 
-**الفكرة ببساطة:** دليل ضمان للأدوية مرجع رسمي يربط دواعي الاستعمال وأكواد ICD-10-AM بالأسماء العلمية والتصنيف والشكل الصيدلاني وضوابط الوصف والملاحق. يحوّل المشروع هذه العلاقات إلى مستكشف ثنائي اللغة يساعد الصيدلي وشركة التأمين وفريق الأنظمة على فهم الدليل والبحث فيه وتتبع التغييرات بين إصداراته. يفحص المشروع سلامة استيراد الملف إلى التطبيق.
+**الفكرة ببساطة:** دليل ضمان للأدوية الذي ينشره مجلس الضمان الصحي مرجع رسمي يربط دواعي الاستعمال وأكواد ICD-10-AM بالأسماء العلمية والتصنيف والشكل الصيدلاني وضوابط الوصف والملاحق. يبني المشروع مستكشفًا ثنائي اللغة، للقراءة فقط، يساعد فرق التأمين والترميز والأنظمة والصيدلة على البحث في العلاقات المنشورة وتتبع التغييرات بين الإصدارات. كما يتحقق تقنيًا من اكتمال استيراد الملف من دون تقييم صحة قرارات الدليل أو التنبؤ بقرارات المطالبات. مناسب للتأمين الصحي والترميز والمعلوماتية الصحية.
+
+**المصدر الأساسي:** [CHI–Daman Drug Formulary](https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx)
 
 ```text
 PROJECT 2 — CHI Formulary Implementation Navigator
 Duration class: L. Publish: GitHub + Vercel.
 
 GOAL
-Build a bilingual, read-only implementation navigator for the officially published CHI Drug Formulary.
+Build a bilingual, read-only implementation navigator for the officially published CHI–Daman Drug Formulary.
 
 The application must preserve and explain the published relationships between:
 - Indication
@@ -603,7 +677,7 @@ The application must preserve and explain the published relationships between:
 It must support search, filtering, source-row traceability, and descriptive comparison between dated formulary releases.
 
 VERIFIED SOURCE
-Official CHI Drug Formulary page:
+Official CHI–Daman Drug Formulary page:
 https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx
 
 Use the downloaded CHI Formulary workbook and record:
@@ -662,10 +736,10 @@ PROJECT 3 — Saudi Medicine Master Crosswalk
 Duration class: L. Publish: GitHub + Vercel.
 
 GOAL
-Build a workbench that proposes matches between the SFDA/CHI Human Drug List and the NUPCO pharmaceutical catalogue at the level of ingredient, strength, form, route, and pack, with confidence scores and full human review.
+Build a workbench that proposes matches between the Human Drug List workbook published through the CHI–Daman Drug Formulary page and the NUPCO pharmaceutical catalogue at the level of ingredient, strength, form, route, and pack, with confidence scores and full human review.
 
 VERIFIED SOURCES
-- CHI Human Drug List: https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx
+- Human Drug List workbook published through the CHI–Daman Drug Formulary page and built on SFDA registration data: https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx
 - NUPCO Unified Catalogue (pharmaceuticals Excel): https://www.nupco.com/suppliers/unified-catalogue/ (tested July 2026: 4,697 rows, 20 columns including NUPCO Generic Code, Active Ingredient, Concentration, UOM, ATC).
 
 METHOD AND LIMITS
@@ -1339,7 +1413,7 @@ Results stable from a clean environment; clear denominators; subjects counted on
 
 ### 23 — Synthea Medication Reconciliation Sandbox
 
-**الفكرة ببساطة:** مواءمة الأدوية عند انتقال المريض بين مستويات الرعاية مهمة صيدلانية أساسية. هذا المشروع يبني قائمة الأدوية النشطة من سجلات مصطنعة ويكشف التعارضات المحتملة (تكرار مادة، جرعة ناقصة، أمر قديم). مناسب للصيدلة السريرية.
+**الفكرة ببساطة:** مواءمة الأدوية عند انتقال المريض بين مستويات الرعاية مهمة صيدلانية أساسية. يبني هذا المشروع قائمة الأدوية النشطة من سجلات مصطنعة، ويرصد حالات تستحق المراجعة، مثل تكرار المادة أو غياب بيانات الجرعة أو استمرار أمر دوائي قديم. مناسب للصيدلة السريرية.
 
 ```text
 PROJECT 23 — Synthea Medication Reconciliation Sandbox
@@ -1521,7 +1595,7 @@ Probabilities sum to 1; manual results for two cycles; zero-discount/horizon edg
 
 ### 30 — Saudi Budget-Impact Scenario Sandbox
 
-**الفكرة ببساطة:** الأثر على الميزانية هو تكلفة إدخال دواء جديد على جهة ما خلال سنوات. هذا المشروع يبني صندوق سيناريوهات لسياق سعودي بمدخلات موسومة (حقيقية من القوائم العامة أو مصطنعة). مناسب للاقتصاد الصحي والتأمين.
+**الفكرة ببساطة:** يقدّر تحليل الأثر في الميزانية التغير المتوقع في إنفاق جهة ممولة عند إدخال دواء أو تدخل جديد خلال فترة زمنية محددة. يبني هذا المشروع صندوق سيناريوهات لسياق سعودي بمدخلات موسومة، إما منشورة في القوائم العامة أو مصطنعة بوضوح. مناسب للاقتصاد الصحي والتأمين.
 
 ```text
 PROJECT 30 — Saudi Budget-Impact Scenario Sandbox
@@ -1531,7 +1605,7 @@ GOAL
 Build a sandbox for the budget impact of a hypothetical drug/intervention in a Saudi context, focusing on eligible population, uptake, mix substitution, and annual cost, not cost-effectiveness.
 
 VERIFIED SOURCES
-List prices and products from CHI DDF/Human Drug List https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx; public contextual data from CHI/WHO/General Authority for Statistics when needed; ISPOR Budget Impact guidance https://www.ispor.org/publications/journals/value-in-health/abstract/Volume-17--Issue-1/budget-impact-analysis-principles-of-good-practice-report-of-the-ispor-2012-budget-impact-analysis-good-practice-ii-task-force. Make population, use, and discounts synthetic unless a suitable public source exists.
+List prices and products from the Human Drug List workbook published through the CHI–Daman Drug Formulary page and built on SFDA registration data: https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx; public contextual data from CHI/WHO/General Authority for Statistics when needed; ISPOR Budget Impact guidance https://www.ispor.org/publications/journals/value-in-health/abstract/Volume-17--Issue-1/budget-impact-analysis-principles-of-good-practice-report-of-the-ispor-2012-budget-impact-analysis-good-practice-ii-task-force. Make population, use, and discounts synthetic unless a suitable public source exists.
 
 METHOD AND LIMITS
 - Define payer perspective, eligible population, current/new mix, uptake, discontinuation, drug/admin/monitoring/adverse-event costs, and a 1–5 year period. Separate list price from net price; show scenario ranges. Never use QALY/ICER as if it were BIA; never call the output a CHI budget forecast.
@@ -1585,7 +1659,7 @@ GOAL
 Build a stewardship map linking antibiotics registered in the Saudi Human Drug List to the WHO AWaRe classification (Access/Watch/Reserve/Not recommended), showing the distribution of registered products by category, Reserve antibiotics with no registered product, and Not-recommended fixed-dose combinations present in the registry.
 
 VERIFIED SOURCES
-- Saudi Human Drug List via CHI/SFDA: https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx
+- Human Drug List workbook published through the CHI–Daman Drug Formulary page and built on SFDA registration data: https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx
 - WHO AWaRe portal list page: https://aware.essentialmeds.org/list — tested 2026-09-03: server-rendered HTML (549,179 bytes) containing 376 antibiotics each tagged with its group (145 Watch, 94 Access, 30 Reserve, 107 Not recommended). No official CSV export and no public API (three API paths returned 404).
 - Official publication for pinning: WHO AWaRe classification 2025 https://www.who.int/publications/i/item/B09489 (PDF).
 LIMIT: the parser depends on HTML structure and may break; a schema test, a dated fixture, and the PDF as manual reference are mandatory.
@@ -1620,7 +1694,7 @@ VERIFIED SOURCES
 - openFDA Drug Shortages https://api.fda.gov/drug/shortages.json — tested 2026-09-03: 1,635 records; fields generic_name, availability (Available 752 / Unavailable 299 / Limited Availability 124), update_type, package_ndc, openfda.substance_name/rxcui.
 - EMA shortages JSON https://www.ema.europa.eu/en/documents/report/shortages-output-json-report_en.json — tested: 84 records; fields international_non_proprietary_name_inn_or_common_name, supply_shortage_status, pharmaceutical_forms_affected, first_published_date, last_updated_date, shortage_url.
 - SFDA Anticipated Shortage https://www.sfda.gov.sa/en/anticipatedShortage — public web table; no confirmed bulk download; dated manual snapshot.
-- Saudi Human Drug List (CHI) for registered products.
+- Human Drug List workbook published through the CHI–Daman Drug Formulary page, for registered products; the workbook is built on SFDA registration data.
 
 METHOD AND LIMITS
 - Entity = (normalized INN, form, route). Use RxNorm where an rxcui exists and a reviewed synonym list otherwise.
@@ -1706,7 +1780,7 @@ Build an explorer showing which active ingredients registered in the Saudi Human
 VERIFIED SOURCES
 - CPIC API https://api.cpicpgx.org/v1/ — tested 2026-09-03: /guideline (fields name, genes, url, clinpgxid, version) and /pair (fields genesymbol, drugid as "RxNorm:<rxcui>", cpiclevel A/B/C/D, clinpgxlevel, pgxtesting, citations, removed). CPIC content is CC-BY per its site; document in NOTICE.
 - RxNav https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html to resolve RxCUI to names and ingredients.
-- Saudi Human Drug List (CHI).
+- Human Drug List workbook published through the CHI–Daman Drug Formulary page and built on SFDA registration data.
 
 METHOD AND LIMITS
 - Map RxCUI → ingredient via RxNav, then match to locally registered ingredients with the rules of Project 3 (exact/normalized/fuzzy-candidate). Show the evidence level as CPIC defines it with a link to the definition; show removed pairs (removed=true) as history, not current.
@@ -1723,7 +1797,7 @@ Every displayed pair has an original guideline.url; removed pairs isolated; a te
 
 ### 37 — Drug Identity Resolution Service
 
-**الفكرة ببساطة:** الدواء الواحد قد يُكتب بعدة طرق: اسم تجاري، اسم علمي، ملح مختلف، خطأ إملائي، اسم عربي منقول. هذا المشروع يبني خدمة صغيرة تحوّل أي اسم إلى هوية معيارية بدرجة ثقة وبدائل، ولا تقبل تطابقًا صامتًا عند الشك. مناسب لمسار البيانات والتكامل، وقد يحتاج قدرة برمجية.
+**الفكرة ببساطة:** قد يُكتب اسم الدواء بعدة طرق: اسم تجاري، أو اسم علمي، أو ملح مختلف، أو خطأ إملائي، أو نقل صوتي بالعربية. يبني هذا المشروع خدمة صغيرة تحاول ربط الاسم بهوية دوائية معيارية، وتعرض درجة الثقة والبدائل أو تترك النتيجة غير محسومة عند عدم كفاية الأدلة. مناسب لمسار البيانات والتكامل، ويتطلب قدرة برمجية أو مراجعة تقنية مباشرة.
 
 ```text
 PROJECT 37 — Drug Identity Resolution Service
@@ -1793,7 +1867,7 @@ Compare WHO-prequalified finished pharmaceutical products (HIV, TB, malaria, rep
 
 VERIFIED SOURCES
 - WHO Prequalified FPPs https://extranet.who.int/prequal/medicines/prequalified/finished-pharmaceutical-products with official CSV export tested 2026-09-03 via /export?page&_format=csv: 130,242 bytes; 649 data rows; columns WHO Reference Number, "INN, Dosage Form and Strength", Product Type, Therapeutic Area, Applicant, Dosage Form, Basis of Listing, Basis of alternative listing, Date of Prequalification.
-- Saudi Human Drug List (CHI).
+- Human Drug List workbook published through the CHI–Daman Drug Formulary page and built on SFDA registration data.
 LIMIT: INN, form, and strength are merged into one text column and need a parser with a review queue.
 
 METHOD AND LIMITS
@@ -1821,7 +1895,7 @@ GOAL
 Build an explorer of the structure of the registered Saudi pharmaceutical market from the public list: an SKU map per active ingredient (companies, strengths, forms, packs), a proxy concentration index (Herfindahl on product counts) per ATC class, single-source categories (ingredient/form with one manufacturer), and a "second agent" indicator if that field exists in the release used.
 
 VERIFIED SOURCE
-Saudi Human Drug List via CHI/SFDA https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx (registration, scientific name, strength, form, route, manufacturer, agent, price, and ATC fields as inspected). No sales sources; no stock sources.
+Human Drug List workbook published through the CHI–Daman Drug Formulary page and built on SFDA registration data: https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx (registration, scientific name, strength, form, route, manufacturer, agent, price, and ATC fields as inspected). No sales sources; no stock sources.
 
 METHOD AND LIMITS
 - Canonical product model (Project 3) to decompose ingredient/salt/strength/form/pack. The concentration index is computed on registered product counts per manufacturer within ATC-4 and labeled on every screen "structural proxy on product counts, not market share"; do not use antitrust thresholds (1500/2500), which apply to value shares.
@@ -1852,7 +1926,6 @@ If the answer to any of the first four is "no", do not start building yet.
 
 ---
 
-هذا الدليل مرخص برخصة
-CC BY 4.0
-(يجوز النقل والتعديل مع الإسناد). مصادر البيانات المشار إليها تبقى تحت شروط جهاتها. مشروع مستقل غير تابع لأي جهة رسمية وغير معتمد منها.
+هذا الدليل مرخص برخصة [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)؛ يجوز نسخه وتعديله مع الإسناد وبيان التغييرات. مصادر البيانات المشار إليها تبقى خاضعة لشروط جهاتها. هذا مشروع مستقل غير تابع لأي جهة رسمية وغير معتمد منها.
 
+**صيغة إسناد مقترحة:** أيمن القاسم، «المحفظة الصيدلانية العملية»، الإصدار 1.0، 2026، [مستودع GitHub](https://github.com/Aymn74/pharma-portfolio-guide)، CC BY 4.0.
