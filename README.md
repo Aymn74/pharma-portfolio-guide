@@ -129,7 +129,7 @@ L
 | # | المشروع | النطاق | المجال | المدة | غير مبرمج |
 |---:|---|---|---|---|---|
 | 1 | مستكشف جودة سجل الأدوية السعودي | سعودي | تنظيمي / بيانات | M | ✓ |
-| 2 | تدقيق ترميز دليل أدوية الضمان الصحي | سعودي | تأمين / ترميز | L | ◐ |
+| 2 | مستكشف تطبيق دليل ضمان للأدوية | سعودي | تأمين / ترميز / معلوماتية | L | ◐ |
 | 3 | مطابقة سجلات الأدوية السعودية الموحدة | سعودي | تكامل / إمداد | L | ◐ |
 | 4 | مراقب تغيرات كتالوج الشراء الموحد | سعودي | سلسلة إمداد | M | ✓ |
 | 5 | رادار المنافسات العامة للشراء الموحد | سعودي | مشتريات | L | ✗ |
@@ -374,31 +374,78 @@ Detects schema drift; never turns null into zero; shows row counts before/after 
 
 ---
 
-### 2 — CHI Formulary Coding QA Workbench
+### 2 — CHI Formulary Implementation Navigator
 
-**الفكرة ببساطة:** دليل أدوية الضمان الصحي يربط كل دواء بأكواد تشخيص وتصنيف وشكل وطريق وضوابط وصف. هذا المشروع يفحص اتساق هذه الروابط ويضع الحالات المشبوهة في قائمة مراجعة لصيدلي أو مرمّز. مناسب لمسار التأمين الصحي والترميز. لا يقرر التغطية ولا يوصي بعلاج.
+**الفكرة ببساطة:** دليل ضمان للأدوية مرجع رسمي يربط دواعي الاستعمال وأكواد ICD-10-AM بالأسماء العلمية والتصنيف والشكل الصيدلاني وضوابط الوصف والملاحق. يحوّل المشروع هذه العلاقات إلى مستكشف ثنائي اللغة يساعد الصيدلي وشركة التأمين وفريق الأنظمة على فهم الدليل والبحث فيه وتتبع التغييرات بين إصداراته. يفحص المشروع سلامة استيراد الملف إلى التطبيق.
 
 ```text
-PROJECT 2 — CHI Formulary Coding QA Workbench
+PROJECT 2 — CHI Formulary Implementation Navigator
 Duration class: L. Publish: GitHub + Vercel.
 
 GOAL
-Build a QA workbench linking indication, ICD-10 code, scientific name, ATC, form, route, strength, and prescribing edits inside the Saudi health-insurance drug formulary, to surface records that deserve pharmacist/coder review.
+Build a bilingual, read-only implementation navigator for the officially published CHI Drug Formulary.
+
+The application must preserve and explain the published relationships between:
+- Indication
+- ICD-10-AM code
+- Scientific name
+- ATC code
+- Pharmaceutical form
+- Route
+- Strength
+- Substitutability
+- Prescribing edits
+- Referenced appendices
+
+It must support search, filtering, source-row traceability, and descriptive comparison between dated formulary releases.
 
 VERIFIED SOURCE
-Formulary Compilation workbook from https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx (tested: an "Indication" sheet with ICD 10 CODE, SCIENTIFIC NAME, ATC CODE, FORM, ROUTE, STRENGTH, SUBSTITUTABLE, PRESCRIBING EDITS).
+Official CHI Drug Formulary page:
+https://www.chi.gov.sa/Rules/Pages/DamanDrugFormulary.aspx
 
-METHOD AND LIMITS
-- Never emit a "correct/incorrect drug" verdict from matching alone.
-- Rules: missing or formally invalid ICD; missing ATC; inconsistent route/form; unparseable prescribing edits; one record linked to an abnormal number of codes; change between releases.
-- Each finding is a rule-based flag with severity, reason, and evidence; the decision stays with a qualified reviewer.
-- State that CHI/NPHIES coding is not live adjudication.
+Use the downloaded CHI Formulary workbook and record:
+- Download date
+- Published release date
+- File name
+- File size
+- SHA-256 checksum
+- Sheet names
+- Column names
+- Row counts
+
+SOURCE TREATMENT
+- Treat every source row as an officially published record for that release.
+- Preserve source values without silently correcting, normalizing, or replacing them.
+- Limit validation to technical ingestion integrity: file readability, expected schema, row-count reconciliation, data types, exact duplicate preservation, referenced-link reachability, and confirmation that every source row is represented.
+- A value the application cannot parse must be labelled "not parsed by this tool", never "invalid".
+- A blank field must be displayed as "not provided in this release", not classified as an error.
+- Release differences must be described as added, removed, or changed records; they must not be labelled corrections, defects, or regressions.
+- Any external terminology descriptions or mappings must be kept in a separate overlay with their source, version, and licensing status.
+- Do not assess the clinical, regulatory, or coding correctness of CHI decisions.
+- Do not infer coverage, claim approval, medical necessity, or therapeutic suitability.
+- State clearly that the navigator is not connected to live NPHIES adjudication.
 
 DELIVERABLES
-Configurable rule engine; drill-down from indicator to raw row; review queue; coverage report by field/class; review-log export with open/confirmed/not-an-issue states; Arabic/English examples.
+- Source manifest and checksum report
+- Arabic/English searchable formulary explorer
+- Filters for indication, ICD-10-AM, scientific name, ATC, form, and route
+- Relationship view from indication to published medication records
+- Prescribing-edit glossary based only on official CHI documentation
+- Appendix and protocol navigator
+- Raw-source evidence drawer for every displayed record
+- Descriptive comparison between two dated releases
+- Exportable implementation test cases for developers and analysts
+- Data dictionary distinguishing source fields from derived display fields
 
 ACCEPTANCE TESTS
-Tests for ten failure patterns; manual precision audit of 50 flags with agreement rate; no therapeutic recommendation or claim rejection anywhere in the UI; explicit statement that coding QA ≠ adjudication.
+- Reconcile imported sheet and row counts with the downloaded workbook.
+- Demonstrate that every displayed value links back to its original sheet and row.
+- Manually verify at least 20 searches against the official workbook.
+- Preserve exact source values in the evidence view.
+- Test blank fields, repeated rows, unparsed edits, and unreachable appendix links without calling them source errors.
+- Show the source release date and checksum on every exported report.
+- Do not use "suspicious", "incorrect", "invalid mapping", "coding error", or "anomaly" to characterize official records.
+- No coverage recommendation, claim decision, therapeutic recommendation, or live-adjudication claim anywhere in the application.
 ```
 
 ---
